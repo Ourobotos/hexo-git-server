@@ -1,0 +1,2 @@
+#!/bin/sh
+git --work-tree=/hexo-server/html --git-dir=/hexo-server/repos/hexo.git checkout -f
