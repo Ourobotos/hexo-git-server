@@ -10,17 +10,17 @@ services:
     ports:
       - "2222:22"
     volumes:
-      - ~/hexo-server/keys:/hexo-server/keys
-      - ~/hexo-server/repos:/hexo-server/repos
-      - ~/hexo-server/html:/hexo-server/html
+      - /hexo-server/keys:/hexo-server/keys
+      - /hexo-server/repos:/hexo-server/repos
+      - /hexo-server/html:/hexo-server/html
   
   nginx:
     image: nginx
     container_name: hexo-nginx
     restart: always
     volumes:
-      - ~/hexo-server/html:/usr/share/nginx/html
-      - ~/hexo-server/logs:/var/log/nginx
+      - /hexo-server/html:/usr/share/nginx/html
+      - /hexo-server/logs:/var/log/nginx
     ports:
       - "80:80"
       - "443:443"
